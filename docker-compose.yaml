@@ -1,0 +1,15 @@
+services:
+  api:
+    build:
+      context: .
+      dockerfile: ./compose/api/Dockerfile
+      target: DEVELOPMENT
+    image: express-template-api
+    container_name: express-template-api
+    command: npm run start:dev
+    ports:
+      - 3000:3000
+    volumes:
+      - .:/usr/src/app
+      - /usr/src/app/node_modules
+    
