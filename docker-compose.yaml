@@ -1,4 +1,22 @@
+networks:
+  example-api-network:
+    name: example-api-network
+    driver: bridge
+
+volumes:
+  example-db-local-data: {}
+
 services:
+  postgres:
+    image: postgres:alpine3.20
+    container_name: express-template-db
+    volumes:
+      - example-db-local-data:/var/lib/postgresql/data:Z
+    env_file:
+      - .envs/.local/.postgres
+    networks:
+      - example-api-network
+
   api:
     build:
       context: .
@@ -12,4 +30,6 @@ services:
     volumes:
       - .:/usr/src/app
       - /usr/src/app/node_modules
+    networks:
+      - example-api-network
     
