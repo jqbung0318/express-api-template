@@ -18,3 +18,5 @@ RUN npm ci --no-audit --no-progress && chown -R node ./node_modules
 COPY --chown=node:node . .
 
 USER node
+
+CMD [ "npm", "run", "dev" ]

@@ -1,0 +1,1 @@
+DRIZZLE_DB=postgres://superuser:random123Password@postgres:5432/postgres
