@@ -32,4 +32,19 @@ services:
       - /usr/src/app/node_modules
     networks:
       - example-api-network
+
+  # api-production:
+  #   build:
+  #     context: .
+  #     dockerfile: ./compose/api/Dockerfile
+  #     target: PRODUCTION
+  #   image: express-template-api
+  #   container_name: express-template-api
+  #   command: npm start
+  #   ports:
+  #     - 3001:3001
+  #   volumes:
+  #     - /usr/src/app/node_modules
+  #   networks:
+  #     - example-api-network
     

@@ -1,7 +1,7 @@
 import { Request, Response, NextFunction } from "express";
 
 class CustomError extends Error {
-    message: string;
+    // message: string;
     statusCode: number;
 
     constructor(message: string, statusCode: number) {
